@@ -1,0 +1,24 @@
+package lesson6;
+
+public class ShowTime {
+
+	static void formatT(int h, int min, int sec) {
+		System.out.println(
+				(h < 10 ? "0" + h : h) + " : " + (min < 10 ? "0" + min : min) + " : " + (sec < 10 ? "0" + sec : sec));
+	}
+
+	static void showT() {
+
+		for (int h = 0; h < 2; h++) { // hours
+			for (int m = 0; m < 60; m++) { // minutes
+				for (int s = 0; s < 60; s++) { // seconds
+					formatT(h, m, s);
+				}
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		showT();
+	}
+}
