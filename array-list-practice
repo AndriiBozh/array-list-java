@@ -1,0 +1,27 @@
+package lesson10;
+
+import java.util.ArrayList;
+
+public class Test {
+
+	static ArrayList<String> addUniqueElements(String... strings) {
+		ArrayList<String> st = new ArrayList<>();
+
+		for (String s : strings) {
+			if (!st.contains(s)) {
+				st.add(s);
+			}
+		}
+		return st;
+
+	}
+
+	public static void main(String[] args) {
+
+		ArrayList<String> res = new ArrayList<>(addUniqueElements("hello", "fine", "good", "hello", "fine", "nice"));
+
+		System.out.print(res); // [hello, fine, good, nice]
+
+	}
+
+}
