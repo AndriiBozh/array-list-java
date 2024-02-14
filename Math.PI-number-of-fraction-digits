@@ -1,0 +1,13 @@
+package lesson13;
+
+public class Test {
+	public static void main(String args[]) {
+		String pistr = Math.PI + ""; // convert to type String
+
+		for (int i = 3; i < 8; i++) {
+			pistr.substring(0, 3);
+			System.out.println(pistr.substring(0, i));
+//			System.out.println(Double.valueOf(pistr.substring(0, i))); // convert string to double
+		}
+	}
+}
