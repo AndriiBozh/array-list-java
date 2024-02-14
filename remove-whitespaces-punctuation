@@ -1,0 +1,22 @@
+package lesson13;
+
+import java.util.Scanner;
+
+public class Test {
+
+	static String formatString(String str) {
+		return str.replaceAll("[\\W]", "");
+	};
+
+	public static void main(String args[]) {
+		System.out.println("Please enter your text:");
+
+		Scanner scanner = new Scanner(System.in);
+
+		String str = formatString(scanner.nextLine());
+
+		System.out.println("str: " + str);
+
+		scanner.close();
+	}
+}
