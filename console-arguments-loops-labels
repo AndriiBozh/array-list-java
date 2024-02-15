@@ -1,0 +1,35 @@
+package lesson14;
+
+public class Test {
+	public static void main(String[] args) {
+
+		String[] testArgs = { "--admin", "--guest" };
+		int countMatches = 0;
+
+		first: for (String testArg : testArgs) {
+			for (String arg : args) {
+				if (arg.indexOf(testArg) != -1) {
+					countMatches += 1;
+					continue first; // procede to the next element in testArgs[] after the first match in args[] has
+									// been found
+				}
+			}
+		}
+
+		if (countMatches >= 2) {
+			System.out.println("Please, select either 'ADMIN' or 'GUEST'");
+		} else {
+			for (String arg : args) {
+				if (arg.indexOf("--admin") != -1) {
+					System.out.println("Hello, admin");
+					break; // stop searching (and printing) after the first match (if there are more then
+							// one --admin argument in args[])
+				}
+				if (arg.indexOf("--guest") != -1) {
+					System.out.println("Hello, guest");
+					break;
+				}
+			}
+		}
+	}
+}
