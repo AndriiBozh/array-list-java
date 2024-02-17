@@ -1,0 +1,21 @@
+package lesson16;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public static int getWordsAmount(String text) {
+		String[] arr = text.split("[, ?.@!]+");
+		return arr.length;
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Please enter integers: ");
+
+		Scanner scanner = new Scanner(System.in);
+		String str = scanner.nextLine();
+		scanner.close();
+
+		System.out.println(getWordsAmount(str));
+	}
+}
