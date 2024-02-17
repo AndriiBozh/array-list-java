@@ -1,0 +1,33 @@
+// entered are numbers, separated by a space
+
+package lesson16;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public static int findMaxIntInArray(int[] intArray) {
+		int max = 0;
+		for (int num : intArray) {
+			if (num > max) {
+				max = num;
+			}
+		}
+		return max;
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Please enter integers: ");
+
+		Scanner scanner = new Scanner(System.in);
+		String[] strArr = scanner.nextLine().split(" ");
+		scanner.close();
+		int[] intArr = new int[strArr.length];
+
+		for (int i = 0; i < strArr.length; i++) {
+			intArr[i] = Integer.parseInt(strArr[i]);
+		}
+
+		System.out.println(findMaxIntInArray(intArr));
+	}
+}
