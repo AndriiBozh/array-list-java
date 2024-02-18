@@ -1,0 +1,37 @@
+package lesson17;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Test {
+
+	public static String[] filterWordsByLength(int minLength, String[] words) {
+		ArrayList<String> strArrL = new ArrayList<String>();
+		for (int i = 0; i < words.length; i++) {
+			if (words[i].length() >= minLength) {
+				strArrL.add(words[i]);
+			}
+		}
+
+		int arrLength = strArrL.size();
+		String[] strArr = new String[arrLength];
+		strArr = strArrL.toArray(strArr);
+		return strArr;
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Please enter integers: ");
+
+		Scanner scanner = new Scanner(System.in);
+		String str = scanner.nextLine();
+		String[] strArr = str.split(" ");
+		System.out.println("Please enter min length of a word: ");
+		int length = scanner.nextInt();
+
+		scanner.close();
+		String[] strA = filterWordsByLength(length, strArr);
+		for (String st : strA) {
+			System.out.println(st);
+		}
+	}
+}
