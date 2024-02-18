@@ -1,0 +1,42 @@
+package lesson17;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Test {
+
+	public static int[] generateRandomArray(int amountOfElements) {
+		int[] randArr = new int[amountOfElements];
+		Random rand = new Random();
+
+		for (int i = 0; i < randArr.length; i++) {
+			randArr[i] = rand.nextInt(amountOfElements) + 1;
+		}
+		return randArr;
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Please enter integer: ");
+
+		Scanner scanner = new Scanner(System.in);
+		int numOfElem = scanner.nextInt();
+		scanner.close();
+		int[] randomArr = generateRandomArray(numOfElem);
+
+		int[] randomArrMultiplied = new int[randomArr.length * 2];
+
+//		 fill the first half of randomArrMultiplied array with values from randomArr
+		for (int i = 0; i < randomArr.length; i++) {
+			randomArrMultiplied[i] = randomArr[i];
+		}
+
+//			fill the second half of randomArrMultiplied array with values from randomArr multiplied by 2
+		for (int j = 0, k = randomArr.length; j < randomArr.length; j++, k++) {
+			randomArrMultiplied[k] = randomArr[j] * 2;
+		}
+
+		for (int a : randomArrMultiplied) {
+			System.out.println("m: " + a);
+		}
+	}
+}
