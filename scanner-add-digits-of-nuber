@@ -1,0 +1,31 @@
+package lesson18;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public static int sumDigitsInPositiveNumber(int number) {
+
+		String[] numsStr = Integer.toString(number).split("");
+		int res = 0;
+		for (String n : numsStr) {
+			res += Integer.parseInt(n);
+		}
+		return res;
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Please enter a number: ");
+		Scanner scanner = new Scanner(System.in);
+
+		while (!scanner.hasNextInt()) {
+			scanner.next(); // continue to accept user's input
+			System.out.println("Only digits are accepted, please: " + "\r");
+
+		}
+		int num = scanner.nextInt();
+		System.out.println("result: " + sumDigitsInPositiveNumber(num));
+
+		scanner.close();
+	}
+}
