@@ -1,0 +1,31 @@
+package lesson2;
+
+public class Test {
+	public double divide(int divideThisNum) {
+		int a = (int) (Math.random() * 100);
+		int b = (int) (Math.random() * 100);
+		return divideThisNum / (a / b);
+	}
+
+	public static void main(String[] args) {
+
+		Test test = new Test();
+
+		double res = 0.0;
+		int countDivisionsByZero = 0;
+		int i;
+		for (i = 0; i < 100; i++) {
+			try {
+				res = test.divide(12345);
+			} catch (ArithmeticException e) {
+				countDivisionsByZero += 1;				
+				res = 0.0;
+				System.out.println("Division by zero");
+			}
+		}
+
+		System.out.println("div by zero: " + countDivisionsByZero);
+		System.out.println("end, res: " + res);
+		System.out.println("end");
+	}
+}
