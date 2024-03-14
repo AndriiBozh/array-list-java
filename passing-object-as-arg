@@ -1,0 +1,33 @@
+package lesson;
+
+class TakeObjAsArg {
+	int a;
+	int b;
+	int c;
+
+	TakeObjAsArg(int a, int b, int c) {
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+
+	boolean checkIfObjectsAreEqual(TakeObjAsArg obj) {
+		if ((obj.a == a) & (obj.b == b) & (obj.c == c)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
+public class Test {
+	public static void main(String[] args) {
+		TakeObjAsArg o1 = new TakeObjAsArg(1, 2, 3);
+		TakeObjAsArg o2 = new TakeObjAsArg(2, 3, 4);
+		TakeObjAsArg o3 = new TakeObjAsArg(1, 2, 3);
+
+		System.out.println(o1.checkIfObjectsAreEqual(o2)); // false
+		System.out.println(o2.checkIfObjectsAreEqual(o3)); // false
+		System.out.println(o3.checkIfObjectsAreEqual(o1)); // true
+	}
+}
