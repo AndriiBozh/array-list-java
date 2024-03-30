@@ -1,0 +1,37 @@
+package classesPractice;
+
+enum EngineType {
+	DIESEL, PETROL, GAS, ELECTRIC
+}
+
+public class Car {
+	private String manufacturer;
+	private EngineType engineType;
+
+	public Car(String manufacturer, EngineType engineType) {
+		this.setManufacturer(manufacturer);
+		this.engineType = engineType;
+	}
+
+	public String getManufacturer() {
+		return manufacturer;
+	}
+
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
+	}
+
+	public EngineType getEngineType() {
+		return engineType;
+	}
+
+	public void setEngineType(EngineType engineType) {
+		this.engineType = engineType;
+	}
+
+	public static void main(String[] args) {
+		Car car1 = new Car("Ford", EngineType.DIESEL);
+		System.out.println("The car is made by " + car1.getManufacturer() + " and it has a "
+				+ car1.getEngineType().toString().toLowerCase() + " engine.");
+	}
+}
